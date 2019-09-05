@@ -1,0 +1,72 @@
+<section id="supporters" class="section-with-bg wow fadeInUp">
+
+    <div class="container">
+      <div class="section-header">
+        <h2>Sponsors</h2>
+      </div>
+      <p style="margin-left:10%;">If you are interested in becoming sponsor of this conference, please fill in the form or contact us in any way you want. </p>
+      <div class="text-center">
+        <button type="button" class="btn" data-toggle="modal" data-target="#become-sponsor" style="color: #fff;background: #f82249;padding: 7px 22px;
+        border-radius: 50px;border: 2px solid #f82249;transition: all ease-in-out 0.3s;font-weight: 500;margin-left: 8px;margin-top: 2px;line-height: 1;font-size: 13px;">Become Sponsor</button>
+      </div>
+
+      <!-- Modal Order Form -->
+      <div id="become-sponsor" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Become sponsor</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form ng-submit="becomeSponsor(sponsor)" >
+                <div class="form-group">
+                  <input type="text" class="form-control" name="your-name" placeholder="Company name" ng-model="sponsor.company" required>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="description" rows="5" data-rule="required"  placeholder="Company description" ng-model="sponsor.companyDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="your-name" placeholder=" Logo URL" ng-model="sponsor.logoUrl" required>
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="your-email" placeholder="Contact Email" ng-model="sponsor.contactEmail" required>
+                </div>
+                
+
+                <div class="form-group">
+                  <select id="ticket-type" name="ticket-type" class="form-control"  ng-model="sponsor.typeOfSponsorship">
+                    <option value="">-- Select sponsorship type --</option>
+                    <option value="Media">Media Sponsorship</option>
+                    <option value="Equipment">Equipment Sponsorship</option>
+                    <option value="Money">Money Sponsorship</option>
+                    <option value="Volunteers"> Volunteers</option>
+                    <option value="Other"> Other</option>
+
+                  </select>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn">Send Request</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+      <div class="row no-gutters supporters-wrap clearfix" ng-init="getSponsors()">
+        <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="x in sponsors">
+          <div class="supporter-logo">
+            <img ng-src="{{x.logoUrl}}" class="img-fluid" alt="">
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+</section>

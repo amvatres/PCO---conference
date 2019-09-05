@@ -1,16 +1,29 @@
 {
   "name": "pcoconference",
   "version": "1.0.0",
-  "description": "",
+  "description": "Thanks for downloading this theme!",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amvatres/PCO---conference.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amvatres/PCO---conference/issues"
+  },
+  "homepage": "https://github.com/amvatres/PCO---conference#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.11",
     "node.js": "0.0.0",
     "nodemon": "^1.19.1"
