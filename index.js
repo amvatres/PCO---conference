@@ -20,7 +20,7 @@ var Sponsors = require('./app/models/sponsor'); // Mongoose employees model
 
 //----------------------------------------------------------------------------------
 const port = process.env.PORT || 1111;
-mongoose.connect(config.livedb); // Connect to db
+mongoose.connect(config.database); // Connect to db
 //----------------------------------------------------------------------------------
 //Uses
 app.set('superSecret', config.secret); // secret variable
