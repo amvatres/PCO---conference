@@ -16,11 +16,12 @@ var Conference = require('./app/models/conference'); // Mongoose employees model
 var Messages = require('./app/models/message'); // Mongoose employees model
 var Speakers = require('./app/models/speaker'); // Mongoose employees model
 var Sponsors = require('./app/models/sponsor'); // Mongoose employees model
+var Agenda = require('./app/models/agenda'); // Mongoose employees model
 
 
 //----------------------------------------------------------------------------------
 const port = process.env.PORT || 1111;
-mongoose.connect(config.database); // Connect to db
+mongoose.connect(config.livedb); // Connect to db
 //----------------------------------------------------------------------------------
 //Uses
 app.set('superSecret', config.secret); // secret variable
@@ -121,9 +122,17 @@ var apiRoutes = express.Router();
 			res.json(sponsors);
 			})
 		});
+
+
 //----------------------------------------------------------------------------------
 
-	
+		apiRoutes.get('/agenda/:day', function(req, res){
+			Agenda.find({date: req.params.day }, function(err, agenda){
+			if(err)
+				res.send(err);
+			res.json(agenda);
+			})
+		});
 //----------------------------------------------------------------------------------
 app.use('/api', apiRoutes);
 //----------------------------------------------------------------------------------

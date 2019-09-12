@@ -1,6 +1,11 @@
 myApp.controller('sidebarCtrl', function($scope, $location, $http, toastr){
 
 
+  $scope.itemClicked =function(){
+      $("li").removeClass("menu-active");   
+  }
+
+
     // Mobile Navigation
   if ($('#nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({

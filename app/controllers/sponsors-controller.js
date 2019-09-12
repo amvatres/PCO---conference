@@ -3,9 +3,10 @@ function sponsorsController($scope,$http,$location,$routeParams,$route,toastr){
        
     $scope.becomeSponsor = function(ticket){
         $http.post('/api/sponsors', ticket, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
-            $route.reload();
             toastr.success('You have successfully sent the request. Our team will contact you. ', 'Success');
-        });
+            $route.reload();
+            $('.modal-backdrop.show').removeClass('modal-backdrop');        
+          });
       }
 
       $scope.getSponsors = function(){

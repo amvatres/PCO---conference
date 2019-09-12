@@ -13,8 +13,11 @@ function speakersController($scope,$http,$location,$routeParams,$route,toastr){
     });
   }
 
+  $scope.openWindow = function(url){
+    console.log(url);
+    $window.open(url);
+  }
  
-
     // Mobile Navigation
   if ($('#nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({

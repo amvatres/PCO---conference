@@ -5,6 +5,8 @@ function ticketsController($scope,$http,$location,$routeParams,$route,toastr){
         $http.post('/api/tickets', ticket, {headers: {'x-access-token': localStorage.getItem('user')}}).then(function(response){
             $route.reload();
             toastr.success('You have successfully bought the ticket !', 'Success');
+            $('.modal-backdrop.show').removeClass('modal-backdrop');        
+
         });
       }
 
