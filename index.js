@@ -2,6 +2,10 @@
 //Dependencies
 var express = require('express');
 var app = express();
+
+app.get('/hikes', hike.index);
+app.post('/add_hike', hike.add_hike);
+
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
@@ -28,7 +32,7 @@ app.set('superSecret', config.secret); // secret variable
 //app.use(express.static(__dirname + '/app')); // client side
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+hike = require('./app/models/hike');
 
 
 
